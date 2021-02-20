@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         fitChart.setMinValue(0f);
         fitChart.setMaxValue(100f);
 
-        // Create a list with the values
+        // Create a list with the set values
         List<FitChartValue> values = new ArrayList<>();
         values.add(new FitChartValue(30f, ContextCompat.getColor(this, R.color.black)));
-        values.add(new FitChartValue(20f, ContextCompat.getColor(this, R.color.purple_700)));
+        values.add(new FitChartValue(25f, ContextCompat.getColor(this, R.color.purple_700)));
         values.add(new FitChartValue(15f, ContextCompat.getColor(this, R.color.teal_200)));
 
         // Add the Collection to the wheel chart
