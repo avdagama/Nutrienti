@@ -28,7 +28,7 @@
         android:fontFamily="@font/poppins"
         android:text="17 days!"
         android:textColor="#000000"
-        android:textSize="42sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/fitChart"
         app:layout_constraintEnd_toEndOf="@+id/fitChart"
         app:layout_constraintStart_toStartOf="@+id/fitChart"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fitChart"
         app:layout_constraintVertical_bias="0.164"
         app:animationMethod="overdraw"
-        app:strokeSize="15dp" />
+        app:strokeSize="12dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fitChart"
         app:layout_constraintVertical_bias="0.164"
         app:animationMethod="overdraw"
-        app:strokeSize="15dp" />
+        app:strokeSize="12dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -95,6 +95,7 @@
         android:fontFamily="@font/poppins"
         android:text="Josh"
         android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/fitChart3"
         app:layout_constraintEnd_toEndOf="@+id/fitChart3"
         app:layout_constraintStart_toStartOf="@+id/fitChart3" />
@@ -107,6 +108,7 @@
         android:fontFamily="@font/poppins"
         android:text="Alexander"
         android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/fitChart1"
         app:layout_constraintEnd_toEndOf="@+id/fitChart1"
         app:layout_constraintHorizontal_bias="0.48"
@@ -124,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fitChart"
         app:layout_constraintVertical_bias="0.164"
         app:animationMethod="overdraw"
-        app:strokeSize="15dp" />
+        app:strokeSize="12dp" />
 
     <TextView
         android:id="@+id/textView1"
@@ -147,6 +149,7 @@
         android:fontFamily="@font/poppins"
         android:text="Mahmoud"
         android:textColor="#000000"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/fitChart2"
         app:layout_constraintEnd_toEndOf="@+id/fitChart2"
         app:layout_constraintStart_toStartOf="@+id/fitChart2" />
@@ -157,6 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins"
         android:text="Welcome back, Alex!"
         android:textColor="#000000"
@@ -165,18 +169,22 @@
         app:layout_constraintBottom_toTopOf="@+id/fitChart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="67dp"
-        android:layout_height="56dp"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
         android:src="@drawable/avatar"
         app:layout_constraintBottom_toTopOf="@+id/fitChart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/UserName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.247" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

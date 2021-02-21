@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="chart_value_1">#FF0099FF</color>
+    <color name="chart_value_2">#7700EE</color>
+    <color name="chart_value_3">#F83402</color>
+</resources>
+
+<!-->
+old colors
+    <color name="chart_value_1">#FF0099FF</color>
     <color name="chart_value_2">#FF6200EE</color>
     <color name="chart_value_3">#FFFF3300</color>
-</resources>
+<!/-->
