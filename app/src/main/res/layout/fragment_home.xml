@@ -12,12 +12,14 @@
         android:layout_height="287dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeSize="30dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -25,10 +27,134 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/heebo_bold"
         android:text="17 days!"
+        android:textColor="#000000"
         android:textSize="42sp"
         app:layout_constraintBottom_toBottomOf="@+id/fitChart"
         app:layout_constraintEnd_toEndOf="@+id/fitChart"
         app:layout_constraintStart_toStartOf="@+id/fitChart"
         app:layout_constraintTop_toTopOf="@+id/fitChart" />
+
+    <com.txusballesteros.widgets.FitChart
+        android:id="@+id/fitChart3"
+        android:layout_width="38dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="476dp"
+        app:layout_constraintEnd_toStartOf="@+id/fitChart2"
+        app:layout_constraintHorizontal_bias="0.806"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeSize="15dp"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/heebo_bold"
+        android:text="17"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fitChart1"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart1"
+        app:layout_constraintStart_toStartOf="@+id/fitChart1"
+        app:layout_constraintTop_toTopOf="@+id/fitChart1"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/heebo_bold"
+        android:text="17"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fitChart2"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart2"
+        app:layout_constraintStart_toStartOf="@+id/fitChart2"
+        app:layout_constraintTop_toTopOf="@+id/fitChart2"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <com.txusballesteros.widgets.FitChart
+        android:id="@+id/fitChart1"
+        android:layout_width="38dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="476dp"
+        app:layout_constraintEnd_toStartOf="@+id/fitChart3"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeSize="15dp"/>
+
+    <com.txusballesteros.widgets.FitChart
+        android:id="@+id/fitChart2"
+        android:layout_width="38dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="476dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeSize="15dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/heebo_bold"
+        android:text="17"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fitChart3"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart3"
+        app:layout_constraintStart_toStartOf="@+id/fitChart3"
+        app:layout_constraintTop_toTopOf="@+id/fitChart3"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/fname1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alexander"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/fitChart1"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart1"
+        app:layout_constraintStart_toStartOf="@+id/fitChart1" />
+
+    <TextView
+        android:id="@+id/fname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Josh"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/fitChart3"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart3"
+        app:layout_constraintStart_toStartOf="@+id/fitChart3" />
+
+    <TextView
+        android:id="@+id/fname3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mahmoud"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/fitChart2"
+        app:layout_constraintEnd_toEndOf="@+id/fitChart2"
+        app:layout_constraintStart_toStartOf="@+id/fitChart2" />
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Welcome Back Alex!"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/fitChart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
