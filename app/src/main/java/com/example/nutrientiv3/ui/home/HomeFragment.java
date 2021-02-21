@@ -49,10 +49,10 @@ public class HomeFragment extends Fragment {
         TextView streak3 = root.findViewById(R.id.textView3);
 
         //calling add_data on each chart add_data
-        user_add_data(chart,25f,25f,25f,text,"18 days!");
-        friends_add_data(chart1,25f,25f,25f,text1,"Nick",streak1,"10");
-        friends_add_data(chart2,25f,25f,25f,text2,"Josh",streak2,"20");
-        friends_add_data(chart3,25f,25f,25f,text3,"Sam",streak3,"100");
+        user_add_data(chart,30f,24f,15f,text,"18 days!");
+        friends_add_data(chart1,30f,20f,24f,text1,"Nick",streak1,"10");
+        friends_add_data(chart2,21f,13f,11f,text2,"Josh",streak2,"20");
+        friends_add_data(chart3,50f,25f,25f,text3,"Sam",streak3,"100");
         return root;
     }
 

@@ -1,4 +1,4 @@
-package com.example.nutrientiv3.ui.dashboard;
+package com.example.nutrientiv3.ui.diary;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nutrientiv3.R;
 
-public class DashboardFragment extends Fragment {
+public class DiaryFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private DiaryViewModel diary;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        diary =
+                new ViewModelProvider(this).get(DiaryViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_diary, container, false);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+        diary.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
