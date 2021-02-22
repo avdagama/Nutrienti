@@ -10,6 +10,7 @@
     <color name="chart_value_1">#2196F3</color>
     <color name="chart_value_2">#9C27B0</color>
     <color name="chart_value_3">#F44336</color>
+    <color name="consumed_cal_color">#4CAF50</color>
 </resources>
 
 <!-->

@@ -6,17 +6,616 @@
     android:layout_height="match_parent"
     tools:context=".ui.diary.DiaryFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/breakfastItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastItem2" />
+
+                <TextView
+                    android:id="@+id/breakfastItem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of Avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastText" />
+
+                <TextView
+                    android:id="@+id/breakfastCalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="cals"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/breakfastFitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/breakfastFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/breakfastFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/breakfastFitChart"
+                    app:layout_constraintVertical_bias="0.69" />
+
+                <TextView
+                    android:id="@+id/breakfastCals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="123"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="@+id/breakfastFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/breakfastFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/breakfastFitChart" />
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/breakfastFitChart"
+                    android:layout_width="38dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    app:animationMethod="overdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastText"
+                    app:strokeSize="12dp" />
+
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Diary"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/breakfastItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="4oz of Chicken"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastItem1" />
+
+                <TextView
+                    android:id="@+id/breakfastText"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Breakfast"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/UserName" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="35dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginRight="22dp"
+                    android:src="@drawable/avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/breakfastDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:alpha="1"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastFitChart" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lunchItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchItem2" />
+
+                <TextView
+                    android:id="@+id/lunchItem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of Avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchText" />
+
+                <TextView
+                    android:id="@+id/lunchCalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="cals"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lunchFitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/lunchFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/lunchFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/lunchFitChart"
+                    app:layout_constraintVertical_bias="0.69" />
+
+                <TextView
+                    android:id="@+id/lunchCals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="123"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="@+id/lunchFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/lunchFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/lunchFitChart" />
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/lunchFitChart"
+                    android:layout_width="38dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    app:animationMethod="overdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchText"
+                    app:strokeSize="12dp" />
+
+                <TextView
+                    android:id="@+id/lunchItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="4oz of Chicken"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchItem1" />
+
+                <TextView
+                    android:id="@+id/lunchText"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Lunch"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/lunchDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:alpha="1"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchFitChart" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/dinnerItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerItem2" />
+
+                <TextView
+                    android:id="@+id/dinnerItem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of Avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerText" />
+
+                <TextView
+                    android:id="@+id/dinnerCalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="cals"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/dinnerFitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/dinnerFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/dinnerFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/dinnerFitChart"
+                    app:layout_constraintVertical_bias="0.69" />
+
+                <TextView
+                    android:id="@+id/dinnerCals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="123"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="@+id/dinnerFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/dinnerFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/dinnerFitChart" />
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/dinnerFitChart"
+                    android:layout_width="38dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    app:animationMethod="overdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerText"
+                    app:strokeSize="12dp" />
+
+                <TextView
+                    android:id="@+id/dinnerItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="4oz of Chicken"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerItem1" />
+
+                <TextView
+                    android:id="@+id/dinnerText"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Dinner"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/dinnerDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:alpha="1"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerFitChart"
+                    tools:layout_editor_absoluteX="16dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/snackItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/snackFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/snackItem2" />
+
+                <TextView
+                    android:id="@+id/snackItem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of Avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/snackFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/snackText" />
+
+                <TextView
+                    android:id="@+id/snackCalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="cals"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/snackFitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/snackFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/snackFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/snackFitChart"
+                    app:layout_constraintVertical_bias="0.69" />
+
+                <TextView
+                    android:id="@+id/snackCals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="123"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="@+id/snackFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/snackFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/snackFitChart" />
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/snackFitChart"
+                    android:layout_width="38dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    app:animationMethod="overdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/snackText"
+                    app:strokeSize="12dp" />
+
+                <TextView
+                    android:id="@+id/snackItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="4oz of Chicken"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/snackFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/snackItem1" />
+
+                <TextView
+                    android:id="@+id/snackText"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Snacks"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/snackDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:alpha="1"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@+id/snackFitChart"
+                    tools:layout_editor_absoluteX="16dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/exerciseItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/exerciseFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseItem2" />
+
+                <TextView
+                    android:id="@+id/exerciseItem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="2 slices of Avocado"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/exerciseFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseText" />
+
+                <TextView
+                    android:id="@+id/exerciseCalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="cals"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exerciseFitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/exerciseFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/exerciseFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/exerciseFitChart"
+                    app:layout_constraintVertical_bias="0.69" />
+
+                <TextView
+                    android:id="@+id/exerciseCals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="123"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="@+id/exerciseFitChart"
+                    app:layout_constraintStart_toStartOf="@+id/exerciseFitChart"
+                    app:layout_constraintTop_toTopOf="@+id/exerciseFitChart" />
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/exerciseFitChart"
+                    android:layout_width="38dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    app:animationMethod="overdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseText"
+                    app:strokeSize="12dp" />
+
+                <TextView
+                    android:id="@+id/exerciseItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="4oz of Chicken"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/exerciseFitChart"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseItem1" />
+
+                <TextView
+                    android:id="@+id/exerciseText"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Exercise"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

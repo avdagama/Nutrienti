@@ -31,20 +31,21 @@ public class AddFragment extends Fragment {
         //Setting the meal circle
         FitChart chart = root.findViewById(R.id.fitChart);
         TextView text = root.findViewById(R.id.calsText);
-        user_add_data(chart,30f,24f,15f,text,"528 cals");
+        meal_add_data(chart, 69,15f,7f,9f,text,"528 cals");
 
 
         return root;
     }
 
     //This function adds the data to the meal circle
-    public void user_add_data(FitChart name, float val1, float val2, float val3, TextView streak, String Sval){
+    public void meal_add_data(FitChart name, float curr, float val1, float val2, float val3, TextView streak, String Sval){
         // FIT CHART1
         name.setMinValue(0f);
         name.setMaxValue(100f);
 
         // Create a list with the set values
         List<FitChartValue> value = new ArrayList<>();
+        value.add(new FitChartValue(curr, ContextCompat.getColor(getContext(), R.color.consumed_cal_color)));
         value.add(new FitChartValue(val1, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
         value.add(new FitChartValue(val2, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
         value.add(new FitChartValue(val3, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
