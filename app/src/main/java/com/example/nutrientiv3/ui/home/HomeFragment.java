@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //START FRIENDS CARD
+        // FRIENDS CARD
         //Defining the friend charts
         FitChart chart = root.findViewById(R.id.fitChart);
         FitChart chart1 = root.findViewById(R.id.homeFriendsFitChart1);
@@ -51,11 +51,9 @@ public class HomeFragment extends Fragment {
         friends_add_data(chart1,30f,20f,24f,text1,"Nick",streak1,"10");
         friends_add_data(chart2,21f,13f,11f,text2,"Josh",streak2,"20");
         friends_add_data(chart3,50f,25f,25f,text3,"Sam",streak3,"100");
-        //END FRIENDS CARD
 
-        //START MACROS CARD
+        //MACROS CARD
             macros_add_data(root, 72f, 56f, 62f);
-        //END MACROS CARD
 
         return root;
     }
