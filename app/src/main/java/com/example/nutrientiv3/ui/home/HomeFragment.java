@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
         //END FRIENDS CARD
 
         //START MACROS CARD
-            macros_add_data(root, 41f, 22f, 16f);
+            macros_add_data(root, 72f, 56f, 62f);
         //END MACROS CARD
 
         return root;
