@@ -108,13 +108,11 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="104dp"
         app:animationMethod="overdraw"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.383"
         app:strokeSize="30dp" />
 
     <Button
@@ -124,9 +122,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
+        android:layout_marginBottom="70dp"
         android:background="@drawable/pill_button"
         android:fontFamily="@font/poppins"
         android:text="Add meal"
@@ -137,9 +135,7 @@
         app:backgroundTint="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitChart"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

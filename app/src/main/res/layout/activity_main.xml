@@ -28,7 +28,6 @@
         android:background="#FFFFFF"
         android:hapticFeedbackEnabled="false"
         android:isScrollContainer="false"
-        android:paddingBottom="10sp"
         app:backgroundTint="#FFFFFF"
         app:elevation="0dp"
         app:itemBackground="@color/white"
