@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
         getSupportActionBar().hide();
 
-
+        //delete this comment
     }
 
 }
