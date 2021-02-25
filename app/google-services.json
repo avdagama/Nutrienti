@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1075507166020",
+    "project_id": "nutrienti-dcdd7",
+    "storage_bucket": "nutrienti-dcdd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075507166020:android:1fb9de1958f38a3eff3511",
+        "android_client_info": {
+          "package_name": "com.example.nutrientiv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075507166020-rlknu8pvhd5eg0eep5jcrk80a5jsditn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nutrientiv3",
+            "certificate_hash": "3b48b7e9ded9e7d957025b52b3aa282e7ba9e3f3"
+          }
+        },
+        {
+          "client_id": "1075507166020-1d9800kdkb3v2m6uu5668mfiln2g4pev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLGagpdygVNjnIbUtpYYltk47ZTNG7CG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075507166020-1d9800kdkb3v2m6uu5668mfiln2g4pev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
