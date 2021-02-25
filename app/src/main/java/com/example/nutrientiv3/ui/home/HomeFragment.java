@@ -1,9 +1,11 @@
 package com.example.nutrientiv3.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nutrientiv3.R;
+import com.example.nutrientiv3.ui.settings.SettingsActivity;
 import com.txusballesteros.widgets.FitChart;
 import com.txusballesteros.widgets.FitChartValue;
 
@@ -21,12 +24,24 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
+    //  private android.widget.ImageView ImageView;
+    //  ImageView view;
+    //  Intent i;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //Defining the onClick for the profile picture, and starting the activity when its clicked
+        ImageView imgview = (ImageView)root.findViewById(R.id.profileImage);
+        imgview.bringToFront();
+        imgview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(v.getContext(), SettingsActivity.class);
+                startActivity(myIntent); }});
 
         // FRIENDS CARD
         //Defining the friend charts
@@ -53,7 +68,7 @@ public class HomeFragment extends Fragment {
         friends_add_data(chart3,50f,25f,25f,text3,"Sam",streak3,"100");
 
         //MACROS CARD
-            macros_add_data(root, 72f, 56f, 62f);
+        macros_add_data(root, 72f, 56f, 62f);
 
         return root;
     }
@@ -137,4 +152,5 @@ public class HomeFragment extends Fragment {
 
 
     }
+
 }
