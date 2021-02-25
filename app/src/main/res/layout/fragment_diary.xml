@@ -11,42 +11,56 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/breakfastConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/breakfastItem3"
+                    android:id="@+id/UserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="@font/poppins"
-                    android:text="2 slices of avocado"
+                    android:text="Today's Diary"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/breakfastItem2" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/breakfastItem1"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="35dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginRight="22dp"
+                    android:src="@drawable/avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/breakfastRecyclerView"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of Avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:minHeight="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/breakfastText" />
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastText"
+                    tools:itemCount="0" />
 
                 <TextView
                     android:id="@+id/breakfastCalsText"
@@ -89,41 +103,12 @@
                     app:strokeSize="12dp" />
 
                 <TextView
-                    android:id="@+id/UserName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="32dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="Today's Diary"
-                    android:textColor="#000000"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/breakfastItem2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="4oz of Chicken"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/breakfastFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/breakfastItem1" />
-
-                <TextView
                     android:id="@+id/breakfastText"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="42dp"
                     android:fontFamily="@font/poppins"
                     android:text="Breakfast"
                     android:textColor="#000000"
@@ -132,24 +117,13 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/UserName" />
 
-                <ImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="35dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginEnd="22dp"
-                    android:layout_marginRight="22dp"
-                    android:src="@drawable/avatar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <View
                     android:id="@+id/breakfastDivider"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="42dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:alpha="1"
@@ -157,41 +131,27 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/breakfastFitChart" />
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastRecyclerView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lunchConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/lunchItem3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/lunchItem2" />
-
-                <TextView
-                    android:id="@+id/lunchItem1"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lunchRecyclerView"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of Avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:minHeight="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/lunchText" />
+                    app:layout_constraintTop_toBottomOf="@+id/lunchText"
+                    tools:itemCount="3" />
 
                 <TextView
                     android:id="@+id/lunchCalsText"
@@ -234,26 +194,12 @@
                     app:strokeSize="12dp" />
 
                 <TextView
-                    android:id="@+id/lunchItem2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="4oz of Chicken"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/lunchFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/lunchItem1" />
-
-                <TextView
                     android:id="@+id/lunchText"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/poppins"
                     android:text="Lunch"
                     android:textColor="#000000"
@@ -268,46 +214,33 @@
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="42dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:alpha="1"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lunchFitChart" />
+                    app:layout_constraintTop_toBottomOf="@+id/lunchRecyclerView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dinnerConstraintLayout"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/dinnerItem3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/dinnerItem2" />
 
-                <TextView
-                    android:id="@+id/dinnerItem1"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dinnerRecyclerView"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of Avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:minHeight="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
                     app:layout_constraintTop_toBottomOf="@+id/dinnerText" />
 
@@ -352,26 +285,12 @@
                     app:strokeSize="12dp" />
 
                 <TextView
-                    android:id="@+id/dinnerItem2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="4oz of Chicken"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/dinnerFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/dinnerItem1" />
-
-                <TextView
                     android:id="@+id/dinnerText"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/poppins"
                     android:text="Dinner"
                     android:textColor="#000000"
@@ -386,47 +305,32 @@
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="42dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:alpha="1"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dinnerFitChart" />
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerRecyclerView" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/snackConstraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/snackItem3"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/snackRecyclerView"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/snackFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/snackItem2" />
-
-                <TextView
-                    android:id="@+id/snackItem1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of Avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:minHeight="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/snackFitChart"
                     app:layout_constraintTop_toBottomOf="@+id/snackText" />
 
@@ -471,26 +375,12 @@
                     app:strokeSize="12dp" />
 
                 <TextView
-                    android:id="@+id/snackItem2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="4oz of Chicken"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/snackFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/snackItem1" />
-
-                <TextView
                     android:id="@+id/snackText"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/poppins"
                     android:text="Snacks"
                     android:textColor="#000000"
@@ -505,34 +395,22 @@
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="42dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:alpha="1"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/snackFitChart" />
+                    app:layout_constraintTop_toBottomOf="@+id/snackRecyclerView" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exerciseConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/exerciseItem3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="2 slices of avocado"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/exerciseFitChart"
-                    app:layout_constraintTop_toBottomOf="@+id/exerciseItem2" />
 
                 <TextView
                     android:id="@+id/exerciseItem1"
@@ -609,7 +487,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/poppins"
                     android:text="Exercise"
                     android:textColor="#000000"

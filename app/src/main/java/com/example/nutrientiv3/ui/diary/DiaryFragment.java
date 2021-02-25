@@ -7,167 +7,126 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nutrientiv3.DiaryAdapter;
 import com.example.nutrientiv3.R;
 import com.txusballesteros.widgets.FitChart;
 import com.txusballesteros.widgets.FitChartValue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class DiaryFragment extends Fragment {
 
     private DiaryViewModel diary;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        diary =
-                new ViewModelProvider(this).get(DiaryViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        diary = new ViewModelProvider(this).get(DiaryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_diary, container, false);
 
-        // SET MEAL VALUES FOR THE UI HERE
-        breakfast_add_data(root, "602",30f,24f,15f,"110g of Cereal", "40g of Egg whites", "1 portion of Egg");
-        lunch_add_data(root, "775",20f,12f,12f,"80g of Oats", "1 scoop of Protein powder", "1 tbsp of peanut butter");
-        dinner_add_data(root, "428",28f,21f,19f,"90g of Rice", "4oz of Chicken", "2 slices of Avocado");
-        snack_add_data(root, "423",17f,26f,11f,"32g of Protein shake", "4oz of Mango Juice", "12 walnuts");
-        exercise_add_data(root, "239",60f,0f,0f,"2972 steps", "2.71 miles", "Good job!");
+        // Get textViews and charts from the UI
+        FitChart breakfastChart = root.findViewById(R.id.breakfastFitChart);
+        TextView breakfastCals = root.findViewById(R.id.breakfastCals);
+        FitChart lunchChart = root.findViewById(R.id.lunchFitChart);
+        TextView lunchCals = root.findViewById(R.id.lunchCals);
+        FitChart dinnerChart = root.findViewById(R.id.dinnerFitChart);
+        TextView dinnerCals = root.findViewById(R.id.dinnerCals);
+        FitChart snackChart = root.findViewById(R.id.snackFitChart);
+        TextView snackCals = root.findViewById(R.id.snackCals);
+        FitChart exerciseChart = root.findViewById(R.id.exerciseFitChart);
+        TextView exerciseCals = root.findViewById(R.id.exerciseCals);
+        TextView exerciseItem1 = root.findViewById(R.id.exerciseItem1);
+        TextView exerciseItem2 = root.findViewById(R.id.exerciseItem2);
+
+        // Setup the RecycleViews and Vectors to update the RecycleViews
+        Vector<String> breakfastStrings = new Vector<String>();
+        Vector<String> lunchStrings = new Vector<String>();
+        Vector<String> dinnerStrings = new Vector<String>();
+        Vector<String> snackStrings = new Vector<String>();
+        setupRecycleViews(root, breakfastStrings, lunchStrings, dinnerStrings, snackStrings);
+
+        // ***** SET DATA HERE *****
+        //Breakfast
+        setChartData(breakfastChart, 22, 15, 22);
+        breakfastCals.setText("386");
+        breakfastStrings.add("110g of Cereal");
+        breakfastStrings.add("40g of Egg Whites");
+        breakfastStrings.add("1 portion of Egg");
+        //Lunch
+        setChartData(lunchChart, 42, 25, 24);
+        lunchCals.setText("619");
+        lunchStrings.add("80g of Oats");
+        lunchStrings.add("1 scoop of Protein powder");
+        lunchStrings.add("1 tbsp of Peanut butter");
+        lunchStrings.add("40g of Vanilla yogurt");
+        lunchStrings.add("4oz of Mango juice");
+        lunchStrings.add("1 portion of Banana");
+        //Dinner
+        setChartData(dinnerChart, 49, 36, 37);
+        dinnerCals.setText("839");
+        dinnerStrings.add("1 bowl of Chipotle chicken");
+        //Snacks
+        setChartData(snackChart, 0, 0, 0);
+        snackCals.setText("0");
+        snackStrings.add("");
+        //Exercise
+        setChartData(exerciseChart, 37, 0, 0);
+        exerciseCals.setText("273");
+        exerciseItem1.setText("5028 steps");
+        exerciseItem2.setText("3.72 miles");
+
 
         return root;
     }
 
-    //This function adds the data for a breakfast meal to the UI
-    public void breakfast_add_data(View root, String calsVal, float carbVal, float proteinVal, float fatVal, String mealItem1, String mealItem2, String mealItem3){
-
-        //connect to the UI
-        FitChart breakfastChart = root.findViewById(R.id.breakfastFitChart);
-        TextView breakfastCalsTextBox = root.findViewById(R.id.breakfastCals);
-        TextView breakfastItem1TextBox = root.findViewById(R.id.breakfastItem1);
-        TextView breakfastItem2TextBox = root.findViewById(R.id.breakfastItem2);
-        TextView breakfastItem3TextBox = root.findViewById(R.id.breakfastItem3);
-
-        // set the ring values
-        breakfastChart.setMinValue(0f);
-        breakfastChart.setMaxValue(100f);
+    // Sets the data to the provided chart
+    public void setChartData(FitChart chart, float carbVal, float proteinVal, float fatVal){
+        chart.setMinValue(0f);
+        chart.setMaxValue(100f);
         List<FitChartValue> value = new ArrayList<>();
         value.add(new FitChartValue(carbVal, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
         value.add(new FitChartValue(proteinVal, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
         value.add(new FitChartValue(fatVal, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
-        breakfastChart.setValues(value);
-
-        //set the textboxes
-        breakfastCalsTextBox.setText(calsVal);
-        breakfastItem1TextBox.setText(mealItem1);
-        breakfastItem2TextBox.setText(mealItem2);
-        breakfastItem3TextBox.setText(mealItem3);
+        chart.setValues(value);
     }
 
-    //This function adds the data for a lunch meal to the UI
-    public void lunch_add_data(View root, String calsVal, float carbVal, float proteinVal, float fatVal, String mealItem1, String mealItem2, String mealItem3){
+    // Sets up the recycle views so that they can be updated with the provided vector
+    public void setupRecycleViews(View root, List<String> breakfastStrings, List<String> lunchStrings, List<String> dinnerStrings, List<String> snackStrings)
+    {
+        //make and set breakfast recycler view
+        RecyclerView breakfastRecyclerView = root.findViewById(R.id.breakfastRecyclerView);
+        DiaryAdapter breakfastAdapter = new DiaryAdapter(getContext(), breakfastStrings);
+        breakfastRecyclerView.setAdapter(breakfastAdapter);
+        breakfastRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        breakfastRecyclerView.setNestedScrollingEnabled(false);
 
-        //connect to the UI
-        FitChart lunchChart = root.findViewById(R.id.lunchFitChart);
-        TextView lunchCalsTextBox = root.findViewById(R.id.lunchCals);
-        TextView lunchItem1TextBox = root.findViewById(R.id.lunchItem1);
-        TextView lunchItem2TextBox = root.findViewById(R.id.lunchItem2);
-        TextView lunchItem3TextBox = root.findViewById(R.id.lunchItem3);
+        //make and set lunch recycler view
+        RecyclerView lunchRecyclerView = root.findViewById(R.id.lunchRecyclerView);
+        DiaryAdapter lunchAdapter = new DiaryAdapter(getContext(), lunchStrings);
+        lunchRecyclerView.setAdapter(lunchAdapter);
+        lunchRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        lunchRecyclerView.setNestedScrollingEnabled(false);
 
-        // set the ring values
-        lunchChart.setMinValue(0f);
-        lunchChart.setMaxValue(100f);
-        List<FitChartValue> value = new ArrayList<>();
-        value.add(new FitChartValue(carbVal, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
-        value.add(new FitChartValue(proteinVal, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
-        value.add(new FitChartValue(fatVal, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
-        lunchChart.setValues(value);
+        //make and set dinner recycler view
+        RecyclerView dinnerRecyclerView = root.findViewById(R.id.dinnerRecyclerView);
+        DiaryAdapter dinnerAdapter = new DiaryAdapter(getContext(), dinnerStrings);
+        dinnerRecyclerView.setAdapter(dinnerAdapter);
+        dinnerRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        dinnerRecyclerView.setNestedScrollingEnabled(false);
 
-        //set the textboxes
-        lunchCalsTextBox.setText(calsVal);
-        lunchItem1TextBox.setText(mealItem1);
-        lunchItem2TextBox.setText(mealItem2);
-        lunchItem3TextBox.setText(mealItem3);
+        //make and set snack recycler view
+        RecyclerView snackRecyclerView = root.findViewById(R.id.snackRecyclerView);
+        DiaryAdapter snackAdapter = new DiaryAdapter(getContext(), snackStrings);
+        snackRecyclerView.setAdapter(snackAdapter);
+        snackRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        snackRecyclerView.setNestedScrollingEnabled(false);
     }
 
-    //This function adds the data for a dinner meal to the UI
-    public void dinner_add_data(View root, String calsVal, float carbVal, float proteinVal, float fatVal, String mealItem1, String mealItem2, String mealItem3){
-
-        //connect to the UI
-        FitChart dinnerChart = root.findViewById(R.id.dinnerFitChart);
-        TextView dinnerCalsTextBox = root.findViewById(R.id.dinnerCals);
-        TextView dinnerItem1TextBox = root.findViewById(R.id.dinnerItem1);
-        TextView dinnerItem2TextBox = root.findViewById(R.id.dinnerItem2);
-        TextView dinnerItem3TextBox = root.findViewById(R.id.dinnerItem3);
-
-        // set the ring values
-        dinnerChart.setMinValue(0f);
-        dinnerChart.setMaxValue(100f);
-        List<FitChartValue> value = new ArrayList<>();
-        value.add(new FitChartValue(carbVal, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
-        value.add(new FitChartValue(proteinVal, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
-        value.add(new FitChartValue(fatVal, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
-        dinnerChart.setValues(value);
-
-        //set the textboxes
-        dinnerCalsTextBox.setText(calsVal);
-        dinnerItem1TextBox.setText(mealItem1);
-        dinnerItem2TextBox.setText(mealItem2);
-        dinnerItem3TextBox.setText(mealItem3);
-    }
-
-    //This function adds the data for a snack meal to the UI
-    public void snack_add_data(View root, String calsVal, float carbVal, float proteinVal, float fatVal, String mealItem1, String mealItem2, String mealItem3){
-
-        //connect to the UI
-        FitChart snackChart = root.findViewById(R.id.snackFitChart);
-        TextView snackCalsTextBox = root.findViewById(R.id.snackCals);
-        TextView snackItem1TextBox = root.findViewById(R.id.snackItem1);
-        TextView snackItem2TextBox = root.findViewById(R.id.snackItem2);
-        TextView snackItem3TextBox = root.findViewById(R.id.snackItem3);
-
-        // set the ring values
-        snackChart.setMinValue(0f);
-        snackChart.setMaxValue(100f);
-        List<FitChartValue> value = new ArrayList<>();
-        value.add(new FitChartValue(carbVal, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
-        value.add(new FitChartValue(proteinVal, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
-        value.add(new FitChartValue(fatVal, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
-        snackChart.setValues(value);
-
-        //set the textboxes
-        snackCalsTextBox.setText(calsVal);
-        snackItem1TextBox.setText(mealItem1);
-        snackItem2TextBox.setText(mealItem2);
-        snackItem3TextBox.setText(mealItem3);
-    }
-
-    //This function adds the data for a exercise meal to the UI
-    public void exercise_add_data(View root, String calsVal, float carbVal, float proteinVal, float fatVal, String mealItem1, String mealItem2, String mealItem3){
-
-        //connect to the UI
-        FitChart exerciseChart = root.findViewById(R.id.exerciseFitChart);
-        TextView exerciseCalsTextBox = root.findViewById(R.id.exerciseCals);
-        TextView exerciseItem1TextBox = root.findViewById(R.id.exerciseItem1);
-        TextView exerciseItem2TextBox = root.findViewById(R.id.exerciseItem2);
-        TextView exerciseItem3TextBox = root.findViewById(R.id.exerciseItem3);
-
-        // set the ring values
-        exerciseChart.setMinValue(0f);
-        exerciseChart.setMaxValue(100f);
-        List<FitChartValue> value = new ArrayList<>();
-        value.add(new FitChartValue(carbVal, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
-        value.add(new FitChartValue(proteinVal, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
-        value.add(new FitChartValue(fatVal, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
-        exerciseChart.setValues(value);
-
-        //set the textboxes
-        exerciseCalsTextBox.setText(calsVal);
-        exerciseItem1TextBox.setText(mealItem1);
-        exerciseItem2TextBox.setText(mealItem2);
-        exerciseItem3TextBox.setText(mealItem3);
-    }
 
 }
