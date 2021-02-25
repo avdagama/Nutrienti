@@ -133,7 +133,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/UserName" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/profileImage"
                     android:layout_width="35dp"
                     android:layout_height="39dp"
                     android:layout_marginTop="28dp"
