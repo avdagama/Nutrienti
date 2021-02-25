@@ -20,9 +20,10 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileImage"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_marginTop="32dp"
@@ -136,19 +137,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:local="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:background="#1b5e20"
-        local:theme="@style/ThemeOverlay.AppCompat.Dark"
-        local:popupTheme="@style/Theme.AppCompat.Light.NoActionBar"
-        >
-
-    </android.support.v7.widget.Toolbar>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
