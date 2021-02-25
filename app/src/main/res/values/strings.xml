@@ -3,4 +3,18 @@
     <string name="title_home"></string>
     <string name="title_add"></string>
     <string name="title_diary"></string>
+    <string-array name="programming_languages">
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Python</item>
+        <item>Kotlin</item>
+    </string-array>
+    <string-array name="description">
+        <item>This is a description</item>
+        <item>This is a description</item>
+        <item>This is a description</item>
+        <item>This is a description</item>
+        <item>This is a description</item>
+    </string-array>
 </resources>
