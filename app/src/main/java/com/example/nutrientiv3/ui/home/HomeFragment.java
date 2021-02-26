@@ -15,9 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nutrientiv3.R;
 import com.example.nutrientiv3.ui.settings.SettingsActivity;
-import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.txusballesteros.widgets.FitChart;
 import com.txusballesteros.widgets.FitChartValue;
 
@@ -65,18 +63,19 @@ public class HomeFragment extends Fragment {
         FitChart chart3 = root.findViewById(R.id.homeFriendsFitChart2);
 
         //Defining the text boxes
-        TextView text = root.findViewById(R.id.textView);
+        TextView text = root.findViewById(R.id.homeUserCalories);
         TextView text1 = root.findViewById(R.id.homeFriendsName1);
         TextView text2 = root.findViewById(R.id.homeFriendsName2);
         TextView text3 = root.findViewById(R.id.homeFriendsName3);
 
         //Streaks
+        TextView streak = root.findViewById(R.id.homeUserStreak);
         TextView streak1 = root.findViewById(R.id.homeFriendsStreak1);
         TextView streak2 = root.findViewById(R.id.homeFriendsStreak3);
         TextView streak3 = root.findViewById(R.id.homeFriendsStreak2);
 
         //calling add_data on each chart add_data
-        user_add_data(chart,30f,24f,15f,text,"18 days!");
+        user_add_data(chart,30f,24f,15f,text,"408", streak, "28");
         friends_add_data(chart1,30f,20f,24f,text1,"Nick",streak1,"10");
         friends_add_data(chart2,21f,13f,11f,text2,"Josh",streak2,"20");
         friends_add_data(chart3,50f,25f,25f,text3,"Sam",streak3,"100");
@@ -106,13 +105,14 @@ public class HomeFragment extends Fragment {
         fname.setText(tname);
 
         //Adjusting the streak
-        streak.setText(streakVal);
+        streak.setText(R.string.fire_emoji);
+        streak.append(streakVal);
 
 
     }
 
     //This function adds the data to the Users circles
-    public void user_add_data(FitChart name,float val1,float val2, float val3, TextView streak,String Sval){
+    public void user_add_data(FitChart name,float val1,float val2, float val3, TextView calories, String calVal, TextView streak, String streakVal){
         // FIT CHART1
         name.setMinValue(0f);
         name.setMaxValue(100f);
@@ -127,7 +127,12 @@ public class HomeFragment extends Fragment {
         name.setValues(value);
 
         //Adjusting the streak number
-        streak.setText(Sval);
+        streak.setText(R.string.fire_emoji);
+        streak.append(streakVal);
+
+        //Adjusting the calorie number
+        calories.setText(calVal);
+        calories.append(" cals left");
     }
 
     public void macros_add_data(View root, float carbVal, float proteinVal, float fatVal) {

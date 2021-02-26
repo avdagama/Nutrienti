@@ -3,4 +3,5 @@
     <string name="title_home"></string>
     <string name="title_add"></string>
     <string name="title_diary"></string>
+    <string name="fire_emoji">&#x1F525;</string>
 </resources>
