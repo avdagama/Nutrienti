@@ -15,6 +15,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nutrientiv3.R;
 import com.example.nutrientiv3.ui.settings.SettingsActivity;
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.txusballesteros.widgets.FitChart;
 import com.txusballesteros.widgets.FitChartValue;
 
@@ -42,6 +45,17 @@ public class HomeFragment extends Fragment {
             public void onClick(View v){
                 Intent myIntent = new Intent(v.getContext(), SettingsActivity.class);
                 startActivity(myIntent); }});
+
+        // TO DO: the sign out button is currently the welcomeText until we make a dedicated sign out button
+        // sign out user when button is pressed
+        TextView signOutButton = (TextView) root.findViewById(R.id.welcomeText);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                FirebaseAuth.getInstance().signOut();
+            }});
+
+
 
         // FRIENDS CARD
         //Defining the friend charts

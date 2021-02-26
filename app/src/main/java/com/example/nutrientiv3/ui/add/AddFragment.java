@@ -46,7 +46,7 @@ public class AddFragment extends Fragment {
 
         // Create a list with the set values
         List<FitChartValue> value = new ArrayList<>();
-        value.add(new FitChartValue(curr, ContextCompat.getColor(getContext(), R.color.consumed_cal_color)));
+        value.add(new FitChartValue(curr, ContextCompat.getColor(getContext(), R.color.green)));
         value.add(new FitChartValue(val1, ContextCompat.getColor(getContext(), R.color.chart_value_1)));
         value.add(new FitChartValue(val2, ContextCompat.getColor(getContext(), R.color.chart_value_2)));
         value.add(new FitChartValue(val3, ContextCompat.getColor(getContext(), R.color.chart_value_3)));
