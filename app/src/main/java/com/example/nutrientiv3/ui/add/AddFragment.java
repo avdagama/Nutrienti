@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -22,6 +23,7 @@ import java.util.List;
 public class AddFragment extends Fragment {
 
     private AddViewModel addViewModel;
+    private Spinner mealSpinner;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -29,10 +31,12 @@ public class AddFragment extends Fragment {
                 new ViewModelProvider(this).get(AddViewModel.class);
         View root = inflater.inflate(R.layout.fragment_add, container, false);
 
+
         //Setting the meal circle
         FitChart chart = root.findViewById(R.id.fitChart);
         TextView text = root.findViewById(R.id.calsText);
         meal_add_data(chart, 69,15f,7f,9f,text,"528 cals");
+
 
 
         return root;
