@@ -1,9 +1,11 @@
 package com.example.nutrientiv3.ui.add;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nutrientiv3.R;
+import com.example.nutrientiv3.Search;
 import com.txusballesteros.widgets.FitChart;
 import com.txusballesteros.widgets.FitChartValue;
 
@@ -31,6 +34,14 @@ public class AddFragment extends Fragment {
                 new ViewModelProvider(this).get(AddViewModel.class);
         View root = inflater.inflate(R.layout.fragment_add, container, false);
 
+        //Defining the onClick for the profile picture, and starting the activity when its clicked
+        ImageView imgview = (ImageView)root.findViewById(R.id.searchIcon);
+        imgview.bringToFront();
+        imgview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(v.getContext(), Search.class);
+                startActivity(myIntent); }});
 
         //Setting the meal circle
         FitChart chart = root.findViewById(R.id.fitChart);
