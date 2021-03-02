@@ -32,7 +32,7 @@
         app:elevation="0dp"
         app:itemBackground="@color/white"
         app:itemHorizontalTranslationEnabled="false"
-        app:itemIconSize="28dp"
+        app:itemIconSize="25dp"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
