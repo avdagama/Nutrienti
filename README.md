@@ -14,7 +14,7 @@ Features:
 - Track consistency with a "streak" that counts how many days in a row you've logged food
 - See friend's rings for the day, and their streaks on the home screen, in realtime
 - Log your weight so you can track your progress over time with an inutitive sparkline chart that supports scrubbing
-- flat and modern design
+- Flat and modern design
 
 Technical:
 - Coded in Java using Android Studio
