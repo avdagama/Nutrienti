@@ -3,6 +3,8 @@
 The code in this repository only represents the beginning stages of the nutrienti android app, and is not represenative of where the project stands today.
 Most of the features below are not included in the uploaded code, but are present and working in the app.
 
+Short video demo: https://www.youtube.com/watch?v=Sa9OWpB5WLA&ab_channel=nutrienti
+
 # Purpose
 According to Withings, only 34.3% of Americans are considered to have a normal weight (using the World Health Organization's classification of BMI levels)<sup>1</sup>. While this figure is suprising, what's even more surpising is that excess weight is considered to be one of the five main causes of mortality<sup>1</sup>. We believe the solution to this problem is fitness, which we can breakdown into two main pillars: exercise and nutrition. Our app aims to provide the tools necessary to allow individuals to meet their fitness goals, by providing a robust fitness-inspired, macronutrient-focused approach to food tracking. Whether your goal is to gain muscle, lose fat, both, or maintain your weight, we want to make the experience as seamless as possible.
 
