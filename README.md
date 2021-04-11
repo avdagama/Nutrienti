@@ -1,7 +1,6 @@
 # nutrienti
 
-The code in this repository only represents the beginning stages of the nutrienti android app, and is not represenative of where the project stands today.
-Most of the features below are not included in the uploaded code, but are present and working in the app.
+The code in this repository only represents the beginning stages of the nutrienti android app, and is not represenative of where the project stands today. The demo video below is a better representation of where the app is today.
 
 # Short demo video
 
