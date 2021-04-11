@@ -3,7 +3,7 @@
 The code in this repository only represents the beginning stages of the nutrienti android app, and is not represenative of where the project stands today.
 Most of the features below are not included in the uploaded code, but are present and working in the app.
 
-# Short video demo
+# Short demo video
 
 https://youtu.be/-_5rAbKT5BY
 
